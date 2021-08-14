@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Weight Loss Calculators</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preload" href="https://chrisjohnnewton.github.io/fonts/rubik-v14-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="https://chrisjohnnewton.github.io/fonts/rubik-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="https://chrisjohnnewton.github.io/main.min.css" as="style">
+        <link rel="stylesheet" type="text/css" href="https://chrisjohnnewton.github.io/main.min.css">
+        <script src="https://chrisjohnnewton.github.io/weight-loss-calculators/weight-loss-calculators.min.js"></script>
+    </head>
+    <article id="calculators" class="pad" style="width:100%">
+        <a class="code-link" href="https://github.com/ChrisJohnNewton/weight-loss-calculators/blob/main/weight-loss-calculators.js" target="_blank" rel="external noreferrer">
+          View the JavaScript
+          <svg width="13" viewBox="0 0 24 24">
+            <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+          </svg>
+        </a>
+        <h2 class="l1">Weight Loss Calculators</h2>
+        <form id="calculator" onsubmit="return calculateWeight()">
+          <select id="calculator-select" name="calculator-choice" onchange="prepareCalculator()">
+            <option value="BMI Calculator" selected>Body Mass Index Calculator</option>
+            <option value="BAI Calculator">Body Adiposity Index Calculator</option>
+          </select>
+            <div class="l2">
+              <div class="l1">
+                  <input id="calculator-imperial" class="l1" checked="checked" name="calculator-measure" type="radio" onchange="prepareCalculator()">
+                  <label for="calculator-imperial" class="l1">Imperial</label>
+              </div>
+              <div class="l1">
+                  <input id="calculator-metric" class="l1" name="calculator-measure" type="radio" onchange="prepareCalculator()">
+                  <label for="calculator-metric" class="l1">Metric</label>
+              </div>
+            </div>
+            <label>
+                <span id="calculator-1-text-a">Weight:</span>
+                <input id="calculator-1-input" max="999" min="0" value="160" size="15" type="number">
+                &nbsp;<span id="calculator-1-text-b">lbs</span>
+            </label>
+            <label>
+              Height:
+              <input id="calculator-2-input-a" max="10" min="1" value="5" size="15" type="number">
+              &nbsp;<span id="calculator-2-text-a">ft</span>
+              <input id="calculator-2-input-b" max="12" min="0" value="5" size="15" type="number">
+              &nbsp;<span id="calculator-2-text-b">in</span>
+            </label>
+            <label id="calculator-3-label" style="display:none">
+              Age:
+              <input id="calculator-3-input" max="79" min="20" value="40" size="15" type="number">
+              &nbsp;<span id="calculator-3-text">years old</span>
+            </label>
+            <div id="calculator-4-radio" class="l2" style="display:none">
+              <div class="l1">
+                  <input id="calculator-female" class="l1" checked="checked" name="calculator-gender" type="radio" onchange="prepareCalculator()">
+                  <label for="calculator-female" class="l1">Female</label>
+              </div>
+              <div class="l1">
+                  <input id="calculator-male" class="l1" name="calculator-gender" type="radio" onchange="prepareCalculator()">
+                  <label for="calculator-male" class="l1">Male</label>
+              </div>
+            </div>
+            <button id="submitButton" class="backing-box" type="submit">Calculate BMI</button>
+            <output id="weight-results">Your result is…</output>
+        </form>
+    </article>
+</html> 
