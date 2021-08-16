@@ -22,8 +22,8 @@
         </svg>
       </a>
       <h2 class="l1">Weight Loss Calculators</h2>
-      <form id="calculator" onsubmit="return calculateWeight()">
-        <select id="calculator-select" name="calculator-choice" onchange="prepareCalculator()">
+      <form id="calculator" class="l1" style="max-width:310px" onsubmit="return calculateWeight()">
+        <select id="calculator-select" class="l1" name="calculator-choice" onchange="prepareCalculator()">
           <option value="BMI Calculator" selected>Body Mass Index Calculator</option>
           <option value="BAI Calculator">Body Adiposity Index Calculator</option>
         </select>
@@ -39,19 +39,19 @@
           </div>
           <label>
               <span id="calculator-1-text-a">Weight:</span>
-              <input id="calculator-1-input" max="999" min="0" value="160" size="15" type="number">
+              <input id="calculator-1-input" class="l2 l3" max="999" min="0" value="160" size="15" type="number">
               &nbsp;<span id="calculator-1-text-b">lbs</span>
           </label>
           <label>
             Height:
-            <input id="calculator-2-input-a" max="10" min="1" value="5" size="15" type="number">
+            <input id="calculator-2-input-a" class="l2 l3" max="10" min="1" value="5" size="15" type="number">
             &nbsp;<span id="calculator-2-text-a">ft</span>
-            <input id="calculator-2-input-b" max="12" min="0" value="5" size="15" type="number">
+            <input id="calculator-2-input-b" class="l2 l3" max="12" min="0" value="5" size="15" type="number">
             &nbsp;<span id="calculator-2-text-b">in</span>
           </label>
           <label id="calculator-3-label" style="display:none">
             Age:
-            <input id="calculator-3-input" max="79" min="20" value="40" size="15" type="number">
+            <input id="calculator-3-input" class="l2 l3" max="79" min="20" value="40" size="15" type="number">
             &nbsp;<span id="calculator-3-text">years old</span>
           </label>
           <div id="calculator-4-radio" class="l2" style="display:none">
