@@ -26,9 +26,8 @@ weightResults = document.getElementById("weight-results");
 function prepareCalculator() {
     
     // If the BMI Calculator was chosen.
-    if (calculatorSelect.value === "BMI Calculator") {          
-        calculator.style.height = "361px";
-        calculator1TextA.textContent = "Weight";
+    if (calculatorSelect.value === "BMI Calculator") {
+        calculator1TextA.textContent = "Weight:";
         calculator3Label.style.display = "none";
         calculator4Radio.style.display = "none";
         submitButton.textContent = "Calculate BMI";
@@ -61,8 +60,7 @@ function prepareCalculator() {
     
     // If the BAI Calculator was chosen.    
     } else {
-        calculator.style.height = "457px";
-        calculator1TextA.textContent = "Hip circumference";
+        calculator1TextA.textContent = "Hip circumference:";
         calculator3Label.style.display = "inline-block";
         calculator4Radio.style.display = "flex";
         submitButton.textContent = "Calculate BAI";
