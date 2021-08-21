@@ -14,58 +14,58 @@
     <link rel="apple-touch-icon" href="https://chrisjohnnewton.github.io/apple-touch-icon.png">
   </head>
   <body>
-    <article id="calculators" class="pad" style="width:100%">
-      <a class="code-link" href="https://github.com/ChrisJohnNewton/weight-loss-calculators/blob/main/weight-loss-calculators.js" target="_blank" rel="external noreferrer">
+    <article id="calculators" class="bb pad w100 h100 f fdc aic stripe">
+      <a class="f wfc c2 code-link" href="https://github.com/ChrisJohnNewton/weight-loss-calculators/blob/main/weight-loss-calculators.js" target="_blank" rel="external noreferrer">
         View the JavaScript
         <svg width="13" viewBox="0 0 24 24">
           <path fill="#ad8e55" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
         </svg>
       </a>
-      <h2 class="l1">Weight Loss Calculators</h2>
-      <form id="calculator" class="l1" style="max-width:310px" onsubmit="return calculateWeight()">
-        <select id="calculator-select" class="l1" name="calculator-choice" onchange="prepareCalculator()">
+      <h2 class="wfc l1">Weight Loss Calculators</h2>
+      <form id="calculator" class="g jcsb l1" onsubmit="return calculateWeight()">
+        <select id="calculator-select" class="w310 b1 os0 bs2 l1" name="calculator-choice" onchange="prepareCalculator()">
           <option value="BMI Calculator" selected>Body Mass Index Calculator</option>
           <option value="BAI Calculator">Body Adiposity Index Calculator</option>
         </select>
-          <div class="l2">
-            <div class="l1">
-                <input id="calculator-imperial" class="l1" checked="checked" name="calculator-measure" type="radio" onchange="prepareCalculator()">
-                <label for="calculator-imperial" class="l1">Imperial</label>
-            </div>
-            <div class="l1">
-                <input id="calculator-metric" class="l1" name="calculator-measure" type="radio" onchange="prepareCalculator()">
-                <label for="calculator-metric" class="l1">Metric</label>
-            </div>
+        <div class="wi f jcsb">
+          <div class="wfc">
+              <input id="calculator-imperial" class="bw os0 bsb bs1 l1 s1" checked="checked" name="calculator-measure" type="radio" onchange="prepareCalculator()">
+              <label for="calculator-imperial" class="f l1">Imperial</label>
           </div>
-          <label>
-              <span id="calculator-1-text-a">Weight:</span>
-              <input id="calculator-1-input" class="l2 l3" max="999" min="0" value="160" size="15" type="number">
-              &nbsp;<span id="calculator-1-text-b">lbs</span>
-          </label>
-          <label>
-            Height:
-            <input id="calculator-2-input-a" class="l2 l3" max="10" min="1" value="5" size="15" type="number">
-            &nbsp;<span id="calculator-2-text-a">ft</span>
-            <input id="calculator-2-input-b" class="l2 l3" max="12" min="0" value="5" size="15" type="number">
-            &nbsp;<span id="calculator-2-text-b">in</span>
-          </label>
-          <label id="calculator-3-label" style="display:none">
-            Age:
-            <input id="calculator-3-input" class="l2 l3" max="79" min="20" value="40" size="15" type="number">
-            &nbsp;<span id="calculator-3-text">years old</span>
-          </label>
-          <div id="calculator-4-radio" class="l2" style="display:none">
-            <div class="l1">
-                <input id="calculator-female" class="l1" checked="checked" name="calculator-gender" type="radio" onchange="prepareCalculator()">
-                <label for="calculator-female" class="l1">Female</label>
-            </div>
-            <div class="l1">
-                <input id="calculator-male" class="l1" name="calculator-gender" type="radio" onchange="prepareCalculator()">
-                <label for="calculator-male" class="l1">Male</label>
-            </div>
+          <div class="wfc">
+              <input id="calculator-metric" class="bw os0 bsb bs1 l1 s1" name="calculator-measure" type="radio" onchange="prepareCalculator()">
+              <label for="calculator-metric" class="f l1">Metric</label>
           </div>
-          <button id="submitButton" class="backing-box" type="submit">Calculate BMI</button>
-          <output id="weight-results">Your result is…</output>
+        </div>
+        <label>
+            <span id="calculator-1-text-a">Weight:</span>
+            <input id="calculator-1-input" class="bw os0 bsb bs1 l1 l2 l3" max="999" min="0" value="160" size="15" type="number">
+            &nbsp;<span id="calculator-1-text-b">lbs</span>
+        </label>
+        <label>
+          Height:
+          <input id="calculator-2-input-a" class="bw os0 bsb bs1 l1 l2 l3" max="10" min="1" value="5" size="15" type="number">
+          &nbsp;<span id="calculator-2-text-a">ft</span>
+          <input id="calculator-2-input-b" class="bw os0 bsb bs1 l1 l2 l3" max="12" min="0" value="5" size="15" type="number">
+          &nbsp;<span id="calculator-2-text-b">in</span>
+        </label>
+        <label id="calculator-3-label" style="display:none">
+          Age:
+          <input id="calculator-3-input" class="bw os0 bsb bs1 l1 l2 l3" max="79" min="20" value="40" size="15" type="number">
+          &nbsp;<span id="calculator-3-text">years old</span>
+        </label>
+        <div id="calculator-4-radio" class="wi f jcsb" style="display:none">
+          <div class="wfc">
+            <input id="calculator-female" class="bw os0 bsb bs1 l1 s1" checked="checked" name="calculator-gender" type="radio" onchange="prepareCalculator()">
+            <label for="calculator-female" class="f l1">Female</label>
+          </div>
+          <div class="wfc">
+            <input id="calculator-male" class="bw os0 bsb bs1 l1 s1" name="calculator-gender" type="radio" onchange="prepareCalculator()">
+            <label for="calculator-male" class="f l1">Male</label>
+          </div>
+        </div>
+        <button id="submit-button" class="z1 bb cb b1 os0 l1 back" type="submit">Calculate BMI</button>
+        <output id="weight-results" class="bb w310 f aic jcc cb bw bsb l3">Your result is…</output>
       </form>
       <script src="weight-loss-calculators.min.js"></script>
     </article>

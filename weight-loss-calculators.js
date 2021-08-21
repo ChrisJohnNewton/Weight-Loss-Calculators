@@ -4,7 +4,6 @@
 const calculator = document.getElementById("calculator"),
 calculatorSelect = document.getElementById("calculator-select"),
 calculatorImperial = document.getElementById("calculator-imperial"),
-calculatorMetric = document.getElementById("calculator-metric"),
 calculator1Input = document.getElementById("calculator-1-input"),
 calculator1TextA = document.getElementById("calculator-1-text-a"),
 calculator1TextB = document.getElementById("calculator-1-text-b"),
@@ -17,7 +16,7 @@ calculator3Input = document.getElementById("calculator-3-input"),
 calculator4Radio = document.getElementById("calculator-4-radio"),
 calculatorFemale = document.getElementById("calculator-female"),
 calculatorMale = document.getElementById("calculator-male"),
-submitButton = document.getElementById("submitButton"),
+submitButton = document.getElementById("submit-button"),
 weightResults = document.getElementById("weight-results");
 
 /*
