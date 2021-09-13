@@ -11,9 +11,10 @@ calculator2InputA = document.getElementById("calculator-2-input-a"),
 calculator2TextA = document.getElementById("calculator-2-text-a"),
 calculator2InputB = document.getElementById("calculator-2-input-b"),
 calculator2TextB = document.getElementById("calculator-2-text-b"),
-calculator3Label = document.getElementById("calculator-3-label"),
+weightLabel = document.getElementById("weight-label"),
+ageFieldset = document.getElementById("age-fieldset"),
+genderFieldset = document.getElementById("gender-fieldset"),
 calculator3Input = document.getElementById("calculator-3-input"),
-calculator4Radio = document.getElementById("calculator-4-radio"),
 calculatorFemale = document.getElementById("calculator-female"),
 calculatorMale = document.getElementById("calculator-male"),
 submitButton = document.getElementById("submit-button"),
@@ -27,32 +28,33 @@ function prepareCalculator() {
     // If the BMI Calculator was chosen.
     if (calculatorSelect.value === "BMI Calculator") {
         calculator1TextA.textContent = "Weight:";
-        calculator3Label.style.display = "none";
-        calculator4Radio.style.display = "none";
+        weightLabel.style.marginLeft = "70px";
+        ageFieldset.style.display = "none";
+        genderFieldset.style.display = "none";
         submitButton.textContent = "Calculate BMI";
         
         // If the BMI Calculator AND imperial measurement were chosen.
         if (calculatorImperial.checked) {
             calculator1Input.value = "160";
             calculator1Input.max = "999";
-            calculator1TextB.textContent = "lbs";
+            calculator1TextB.textContent = "\u00A0lbs";
             calculator2InputA.value = "5";
             calculator2InputA.max = "10";
-            calculator2TextA.textContent = "ft";
+            calculator2TextA.textContent = "\u00A0ft";
             calculator2InputB.value = "5";
             calculator2InputB.max = "12";
             calculator2InputB.style.display = "inline-block";
-            calculator2TextB.textContent = "in";
+            calculator2TextB.textContent = "\u00A0in";
             calculator2TextB.style.display = "inline-block";
         
         // If the BMI Calculator AND metric measurement were chosen.
         } else {
             calculator1Input.value = "70";
             calculator1Input.max = "635";
-            calculator1TextB.textContent = "kg";
+            calculator1TextB.textContent = "\u00A0kg";
             calculator2InputA.value = "165";
             calculator2InputA.max = "272";
-            calculator2TextA.textContent = "cm";
+            calculator2TextA.textContent = "\u00A0cm";
             calculator2InputB.style.display = "none";
             calculator2TextB.style.display = "none";
         }
@@ -60,32 +62,33 @@ function prepareCalculator() {
     // If the BAI Calculator was chosen.    
     } else {
         calculator1TextA.textContent = "Hip circumference:";
-        calculator3Label.style.display = "inline-block";
-        calculator4Radio.style.display = "flex";
+        weightLabel.style.marginLeft = "187px";
+        ageFieldset.style.display = "block";
+        genderFieldset.style.display = "flex";
         submitButton.textContent = "Calculate BAI";
         
         // If the BAI Calculator AND imperial measurement were chosen.
         if (calculatorImperial.checked) {
             calculator1Input.value = "35";
             calculator1Input.max = "999";
-            calculator1TextB.textContent = "in";
+            calculator1TextB.textContent = "\u00A0in";
             calculator2InputA.value = "5";
             calculator2InputA.max = "10";
-            calculator2TextA.textContent = "ft";
+            calculator2TextA.textContent = "\u00A0ft";
             calculator2InputB.value = "5";
             calculator2InputB.max = "12";
             calculator2InputB.style.display = "inline-block";
-            calculator2TextB.textContent = "in";
+            calculator2TextB.textContent = "\u00A0in";
             calculator2TextB.style.display = "inline-block";
         
         // If the BAI Calculator AND metric measurement were chosen.
         } else {
             calculator1Input.value = "90";
             calculator1Input.max = "635";
-            calculator1TextB.textContent = "cm";
+            calculator1TextB.textContent = "\u00A0cm";
             calculator2InputA.value = "165";
             calculator2InputA.max = "272";
-            calculator2TextA.textContent = "cm";
+            calculator2TextA.textContent = "\u00A0cm";
             calculator2InputB.style.display = "none";
             calculator2TextB.style.display = "none";
         }
