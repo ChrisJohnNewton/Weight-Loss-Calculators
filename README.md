@@ -33,4 +33,4 @@ The BAI experiences similar shortcomings to the BMI, though research has shown i
 - A 2012 study found that body fat percentage estimates based on the BAI [weren't more accurate](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3477292/#S7title) than those based on the BMI or even simple hip or waist circumference measurements
 
 ## Calculations
-These calculators use slightly differently approaches depending on whether you're using the Metric or Imperial measurement system. You can see how they are calculated by viewing on the [Weight Loss Calculator page](https://chrisnewton.dev/weight-loss-calculator)
+These calculators use slightly different approaches depending on whether you're using the Metric or Imperial measurement system. You can see how they are calculated by viewing on the [Weight Loss Calculator page](https://chrisnewton.dev/weight-loss-calculator)
