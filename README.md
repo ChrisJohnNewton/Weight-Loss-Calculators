@@ -3,6 +3,11 @@
 ## Description
 A calculator for the BMI (Body Mass Index) and BAI (Body Adiposity Index), designed for people 21 years old and up.
 
+Made using:
+- JavaScript
+- JSX
+- Tailwind CSS
+
 ## What Are BMI and BAI?
 ### BMI
 BMI stands for body mass index but was formerly called the Quetelet index after its inventor Adolphe Quetelet, a Belgian statistician.
