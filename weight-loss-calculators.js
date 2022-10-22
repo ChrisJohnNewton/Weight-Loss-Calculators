@@ -3,7 +3,8 @@
 */
 const calculator = document.getElementById("calculator"),
 calculatorSelect = document.getElementById("calculator-select"),
-calculatorImperial = document.getElementById("calculator-imperial"),
+calculatorMeasurement = document.getElementById("calculator-measurement"),
+calculatorGender = document.getElementById("calculator-gender"),
 calculator1Input = document.getElementById("calculator-1-input"),
 calculator1TextA = document.getElementById("calculator-1-text-a"),
 calculator1TextB = document.getElementById("calculator-1-text-b"),
@@ -12,13 +13,22 @@ calculator2TextA = document.getElementById("calculator-2-text-a"),
 calculator2InputB = document.getElementById("calculator-2-input-b"),
 calculator2TextB = document.getElementById("calculator-2-text-b"),
 weightLabel = document.getElementById("weight-label"),
-ageFieldset = document.getElementById("age-fieldset"),
-genderFieldset = document.getElementById("gender-fieldset"),
+ageContainer = document.getElementById("age-container"),
 calculator3Input = document.getElementById("calculator-3-input"),
-calculatorFemale = document.getElementById("calculator-female"),
-calculatorMale = document.getElementById("calculator-male"),
 submitButton = document.getElementById("submit-button"),
 weightResults = document.getElementById("weight-results");
+
+/*
+    ADD EVENT LISTENERS TO THE NECESSARY ELEMENTS.
+*/
+[calculatorSelect, calculatorMeasurement, calculatorGender].forEach((e) => {
+        e.addEventListener("change", () => {
+        prepareCalculator();
+    });
+});
+submitButton.addEventListener("click", () => {
+    calculateWeight();
+});
 
 /*
     PREPARE THE CALCULATOR DEPENDING ON WHICH CALCULATOR AND MEASUREMENT WERE CHOSEN.
@@ -28,13 +38,13 @@ function prepareCalculator() {
     // If the BMI Calculator was chosen.
     if (calculatorSelect.value === "BMI Calculator") {
         calculator1TextA.textContent = "Weight:";
-        weightLabel.style.marginLeft = "70px";
-        ageFieldset.style.display = "none";
-        genderFieldset.style.display = "none";
+        // weightLabel.style.marginLeft = "70px";
+        ageContainer.style.display = "none";
+        calculatorGender.parentNode.style.display = "none";
         submitButton.textContent = "Calculate BMI";
         
         // If the BMI Calculator AND imperial measurement were chosen.
-        if (calculatorImperial.checked) {
+        if (!calculatorMeasurement.checked) {
             calculator1Input.value = "160";
             calculator1Input.max = "999";
             calculator1TextB.textContent = "\u00A0lbs";
@@ -62,13 +72,13 @@ function prepareCalculator() {
     // If the BAI Calculator was chosen.    
     } else {
         calculator1TextA.textContent = "Hip circumference:";
-        weightLabel.style.marginLeft = "187px";
-        ageFieldset.style.display = "block";
-        genderFieldset.style.display = "flex";
+        // weightLabel.style.marginLeft = "187px";
+        ageContainer.style.display = "block";
+        calculatorGender.parentNode.style.display = "flex";
         submitButton.textContent = "Calculate BAI";
         
         // If the BAI Calculator AND imperial measurement were chosen.
-        if (calculatorImperial.checked) {
+        if (!calculatorMeasurement.checked) {
             calculator1Input.value = "35";
             calculator1Input.max = "999";
             calculator1TextB.textContent = "\u00A0in";
@@ -119,7 +129,7 @@ function calculateWeight() {
         */
         weight = calculator1Input.value;
         // If imperial measurement was chosen.
-        if (calculatorImperial.checked) {
+        if (!calculatorMeasurement.checked) {
             weight = weight * 703;
             height = (+calculator2InputA.value * 12) + +calculator2InputB.value, // Get the height in inches.
             lowerWeightRange = ((18.5 * Math.pow(height,2)) / 703).toFixed(1);
@@ -153,7 +163,7 @@ function calculateWeight() {
             Calculate the BAI index.
         */
         // If imperial measurement was chosen.
-        if (calculatorImperial.checked) {
+        if (!calculatorMeasurement.checked) {
             hipCircumference = calculator1Input.value * 2.54, // Convert inches to centimetres.
             height = (+calculator2InputA.value * 12) + +calculator2InputB.value, // Get the height in inches.
             height = height  / 39.37; // Convert inches to metres.
@@ -169,7 +179,7 @@ function calculateWeight() {
         */
         age = calculator3Input.value; // Get the age of the person.
         // If female was chosen.
-        if (calculatorFemale.checked) {
+        if (calculatorGender.checked) {
             if (age < 40) {
                 weightGuideline = `<span style="font-weight:800">21%</span> to <span style="font-weight:800">33%</span>`;
                 if (weightResult < 21) {              
@@ -257,13 +267,4 @@ function calculateWeight() {
     */
     weightResults.innerHTML = `<div style="padding-right:2px;padding-left:2px;text-align:center">Your ${weightCalculator} is <span style="font-weight:800">${+weightResult}${weightUnit}</span>, which classes you as ${weightInterpretation}. ${furtherInfo}.</div>`;
 
-    /* 
-        Stop the page reloading by passing false to onsubmit's handler.
-        
-        Note: This form's HTML includes the attribute, onsubmit="return calculateWeight()" and so
-        will effectively pass on the “return false” of this function to onsubmit's function body.
-        If it were onsubmit="calculateWeight()", onsubmit's handler would just return the default
-        return value of functions (undefined) and submit the form, hence reloading the page.
-    */
-    return false;
 }
